@@ -2,6 +2,7 @@
 #define MAIN_H
 
 void _putchar(char);
+void print_string(char *);
 int _printf(const char *, ...);
 #include <stdarg.h>
 typedef struct {

@@ -1,6 +1,5 @@
 #include <stdarg.h>
-#include <stdio.h>
-#include "variadic_functions.h"
+#include "main.h"
 /**
  * print_char - check code
  * @ap: variadic list
@@ -26,22 +25,7 @@ void print_float(va_list ap)
 {
 	printf("%f", va_arg(ap, double));
 }
-/**
- * print_string - check code
- * @ap: variadic list
- */
-void print_string(va_list ap)
-{
-	char *str = va_arg(ap, char *);
-
-	printf("%s", str == NULL ? "(nil)" : str);
-}
-/**
- * print_all - check code
- * @format: string
- * Return: none
- */
-void print_all(const char * const format, ...)
+void _printf(const char * const format, ...)
 {
 	int i = 0, j;
 	va_list ap;
