@@ -3,23 +3,24 @@
 /**
  * _puts_recursion - check code
  * @s: string to display
- * Return: none
+ * Return: string length
  */
-void _puts_recursion(char *s)
+int _puts_recursion(char *s)
 {
 	if (*s == '\0')
 	{
 		_putchar('\n');
-		return;
+		return (0);
 	}
 	_putchar(*s);
-	_puts_recursion(s + 1);
+	return (1 + _puts_recursion(s + 1));
 }
 /**
  * print_string - check code
- * @ap: variadic list
+ * @av: variadic list
+ * Return: string length
  */
-void print_string(va_list ap)
+int print_string(va_list av)
 {
-	_puts_recursion(va_arg(ap, char *));
+	return (_puts_recursion(va_arg(ap, char *)));
 }
