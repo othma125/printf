@@ -5,8 +5,8 @@
  * @va: variadic list
  * Return: returns 1
  */
-int print_char(va_list ap)
+int print_char(va_list va)
 {
-	_putchar(va_arg(ap, int));
+	_putchar(va_arg(va, int));
 	return (1);
 }

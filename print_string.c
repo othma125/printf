@@ -8,10 +8,7 @@
 int _puts_recursion(char *s)
 {
 	if (*s == '\0')
-	{
-		_putchar('\n');
 		return (0);
-	}
 	_putchar(*s);
 	return (1 + _puts_recursion(s + 1));
 }
@@ -20,7 +17,7 @@ int _puts_recursion(char *s)
  * @av: variadic list
  * Return: string length
  */
-int print_string(va_list av)
+int print_string(va_list va)
 {
-	return (_puts_recursion(va_arg(ap, char *)));
+	return (_puts_recursion(va_arg(va, char *)));
 }
