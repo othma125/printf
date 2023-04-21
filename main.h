@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stddef.h>
 #include <stdarg.h>
+#include <limits.h>
 void _putchar(char);
 int print_char(va_list);
 int print_string(va_list);

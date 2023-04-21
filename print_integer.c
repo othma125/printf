@@ -3,30 +3,27 @@
 /**
  * print_number - print numbers
  * @n: input number
- * Return: None
+ * Return: string length
  */
-void print_number(int n)
+int print_number(int n)
 {
 	if (n < 0)
 	{
-		if (n == -2147483648)
-		{
-			print_number(n / 10);
-			print_number(-(n % 10));
-		}
+		if (n == INT_MIN)
+			return (print_number(n / 10) + print_number(-(n % 10)));
 		else
 		{
 			_putchar('-');
-			print_number(-n);
+			return (1 + print_number(-n));
 		}
 	}
 	else if (n >= 10)
-	{
-		print_number(n / 10);
-		print_number(n % 10);
-	}
+		return (print_number(n / 10) + print_number(n % 10));
 	else
+	{
 		_putchar('0' + n);
+		return (1);
+	}
 }
 /**
  * print_interger - print numbers
@@ -35,5 +32,5 @@ void print_number(int n)
  */
 int print_integer(va_list va)
 {
-	print_number(va_arg(va, int));
+	return (print_number(va_arg(va, int)));
 }
