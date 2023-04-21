@@ -28,3 +28,7 @@ void print_number(int n)
 	else
 		_putchar('0' + n);
 }
+void print_integer(va_list va)
+{
+	print_number(va_arg(va, int));
+}
