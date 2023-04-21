@@ -11,19 +11,13 @@ int print_number(int n)
 	{
 		if (n == INT_MIN)
 			return (print_number(n / 10) + print_number(-(n % 10)));
-		else
-		{
-			_putchar('-');
-			return (1 + print_number(-n));
-		}
+		_putchar('-');
+		return (1 + print_number(-n));
 	}
-	else if (n >= 10)
+	if (n >= 10)
 		return (print_number(n / 10) + print_number(n % 10));
-	else
-	{
-		_putchar('0' + n);
-		return (1);
-	}
+	_putchar('0' + n);
+	return (1);
 }
 /**
  * print_interger - print numbers

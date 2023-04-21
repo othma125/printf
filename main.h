@@ -7,6 +7,7 @@ void _putchar(char);
 int print_char(va_list);
 int print_string(va_list);
 int print_integer(va_list);
+int print_unsigned_integer(va_list);
 int _printf(const char *, ...);
 /**
  *struct _printer - Struct op

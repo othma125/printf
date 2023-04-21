@@ -2,14 +2,17 @@
 
 /**
  * printer_selector - check code
- * @c: character
+ * @format: character specifier
+ * @va: variadic list
  * Return: string length
  */
 int printer_selector(const char *format, va_list va)
 {
 	printer printers[] = {
 	  {"c", print_char},
+	  {"i", print_integer},
 	  {"d", print_integer},
+	  {"b", print_unsigned_integer},
 	  {"s", print_string},
 	  {NULL, NULL}
 	};
@@ -20,12 +23,12 @@ int printer_selector(const char *format, va_list va)
 		j++;
 	if (printers[j].print != NULL)
 		return (printers[j].print(va));
-        _putchar('%');
-        return (1);
+	_putchar('%');
+	return (1);
 }
 /**
  * _printf - check code
- * @format: string
+ * @text: text to display
  * Return: string length
  */
 int _printf(const char * const text, ...)
