@@ -28,6 +28,11 @@ int printer_selector(const char *format, va_list va)
 	if (printers[j].print != NULL)
 		return (printers[j].print(va));
 	_putchar('%');
+	if (*format != '%')
+	{
+		_putchar(*format);
+		return (2);
+	}
 	return (1);
 }
 /**
@@ -43,9 +48,9 @@ int _printf(const char * const text, ...)
 	va_start(va, text);
 	while (text != NULL && text[i] != '\0')
 	{
-		if (text[i] == '%')
+		if (text[i] == '%' && condition == 0)
 			condition = 1;
-		else if (condition)
+		else if (condition == 1)
 		{
 			len += printer_selector(text + i, va);
 			condition = 0;
