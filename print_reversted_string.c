@@ -11,7 +11,7 @@ int _reversed_puts_recursion(char *s)
 
 	if (*s == '\0')
 		return (0);
-	_reversed_puts_recursion(s + 1);
+	n = _reversed_puts_recursion(s + 1);
 	_putchar(*s);
 	return (1 + n);
 }
