@@ -13,10 +13,10 @@ int printer_selector(const char *format, va_list va)
 	  {"i", print_integer},
 	  {"d", print_integer},
 	  {"b", print_to_binary},
-	  {"o", print_to_binary},
-	  {"x", print_to_binary},
-	  {"X", print_to_binary},
-	  {"u", print_unsigned_number},
+	  {"o", print_octal},
+	  {"x", print_hexadecimal},
+	  {"X", print_hexadecimal_capitalized},
+	  {"u", print_unsigned_integer},
 	  {"s", print_string},
 	  {NULL, NULL}
 	};
@@ -58,5 +58,5 @@ int _printf(const char * const text, ...)
 		i++;
 	}
 	va_end(va);
-	return (len);
+	return (text == NULL ? -1 : len);
 }

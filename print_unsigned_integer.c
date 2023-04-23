@@ -8,12 +8,12 @@
 int print_unsigned(unsigned int n)
 {
 	if (n >= 10)
-		return (print_number(n / 10) + print_number(n % 10));
+		return (print_unsigned(n / 10) + print_unsigned(n % 10));
 	_putchar('0' + n);
 	return (1);
 }
 /**
- * print_unsigned_interger - print numbers
+ * print_unsigned_integer - print numbers
  * @va: variadic list
  * Return: string length
  */
