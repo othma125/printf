@@ -7,5 +7,5 @@
  */
 int print_hexadecimal(va_list va)
 {
-	return (numbers_caster(va_arg(va, unsigned int), 16, 0));
+	return (number_caster(va_arg(va, unsigned int), 16, 0));
 }

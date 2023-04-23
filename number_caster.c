@@ -6,7 +6,7 @@
  * @base: integer
  * Return: string length
  */
-int number_caster(const unsigned int n, const unsigned int base, const int capitalized)
+int number_caster(unsigned int n, unsigned int base, int capitalized)
 {
 	char c;
 
