@@ -19,6 +19,6 @@ int number_caster(const int n, const int base, const int capitalized)
 	if (n >= base)
 		return (print_number(n / base) + print_number(n % base));
 	c = capitalized ? 'A' : 'a';
-	_putchar(n < 9 ? '0' + n : c + n - 10);
+	_putchar(n <= 9 ? '0' + n : c + n - 10);
 	return (1);
 }
