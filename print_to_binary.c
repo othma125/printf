@@ -13,7 +13,7 @@ int to_binary(unsigned int n)
 	return (1);
 }
 /**
- * print_unsigned_interger - print numbers
+ * print_to_binary - print numbers
  * @va: variadic list
  * Return: string length
  */

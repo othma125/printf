@@ -14,7 +14,7 @@ int _puts_recursion(char *s)
 }
 /**
  * print_string - check code
- * @av: variadic list
+ * @va: variadic list
  * Return: string length
  */
 int print_string(va_list va)

@@ -13,6 +13,7 @@ int print_octal(va_list);
 int print_hexadecimal(va_list);
 int print_hexadecimal_capitalized(va_list);
 int print_unsigned_integer(va_list);
+char *rot13(char *);
 int _printf(const char *, ...);
 /**
  *struct _printer - Struct _printer

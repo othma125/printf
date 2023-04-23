@@ -20,7 +20,7 @@ int to_string(const int n)
 	return (1);
 }
 /**
- * print_interger - print numbers
+ * print_integer - print numbers
  * @va: variadic list
  * Return: string length
  */

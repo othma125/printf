@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * numbers_caster - cast an integer to binary, octal, hexadecimal
+ * number_caster - cast an integer to binary, octal, hexadecimal
  * @n: input number
  * @base: integer
  * @cap: condition
