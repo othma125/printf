@@ -6,8 +6,9 @@
  * @base: integer
  * Return: string length
  */
-int number_caster(int n, int base)
+int number_caster(const int n, const int base, const int capitalized)
 {
+	char c;
 	if (n < 0)
 	{
 		if (n == INT_MIN)
@@ -17,6 +18,7 @@ int number_caster(int n, int base)
 	}
 	if (n >= base)
 		return (print_number(n / base) + print_number(n % base));
-	_putchar(n < 9 ? '0' + n : 'a' + n - 10);
+	c = capitalized ? 'A' : 'a';
+	_putchar(n < 9 ? '0' + n : c + n - 10);
 	return (1);
 }

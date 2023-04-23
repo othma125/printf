@@ -12,7 +12,11 @@ int printer_selector(const char *format, va_list va)
 	  {"c", print_char},
 	  {"i", print_integer},
 	  {"d", print_integer},
-	  {"b", print_unsigned_integer},
+	  {"b", print_to_binary},
+	  {"o", print_to_binary},
+	  {"x", print_to_binary},
+	  {"X", print_to_binary},
+	  {"u", print_unsigned_number},
 	  {"s", print_string},
 	  {NULL, NULL}
 	};

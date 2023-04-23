@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * to_binary - check code
+ * print_unsigned - print numbers in decimal
  * @n: input number
  * Return: string length
  */
-int to_binary(unsigned int n)
+int print_unsigned(unsigned int n)
 {
-	if (n >= 2)
-		return (to_binary(n / 2) + to_binary(n % 2));
+	if (n >= 10)
+		return (print_number(n / 10) + print_number(n % 10));
 	_putchar('0' + n);
 	return (1);
 }
@@ -19,5 +19,5 @@ int to_binary(unsigned int n)
  */
 int print_unsigned_integer(va_list va)
 {
-	return (to_binary(va_arg(va, unsigned int)));
+	return (print_unsigned(va_arg(va, unsigned int)));
 }
