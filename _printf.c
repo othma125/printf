@@ -1,17 +1,19 @@
 #include "main.h"
 
 /**
- * printer_selector - check code
+ * specifier_selector - check code
  * @format: character specifier
  * @va: variadic list
  * Return: string length
  */
-int printer_selector(const char *format, va_list va)
+int specifier_selector(const char *format, va_list va)
 {
 	printer printers[] = {
 	  {"c", print_char},
 	  {"i", print_integer},
 	  {"d", print_integer},
+	  {"R", print_rot13},
+	  {"r", print_reversed_string},
 	  {"b", print_to_binary},
 	  {"o", print_octal},
 	  {"x", print_hexadecimal},
@@ -52,7 +54,7 @@ int _printf(const char * const text, ...)
 			condition = 1;
 		else if (condition == 1)
 		{
-			len += printer_selector(text + i, va);
+			len += specifier_selector(text + i, va);
 			condition = 0;
 		}
 		else

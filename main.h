@@ -8,12 +8,14 @@ int print_char(va_list);
 int print_string(va_list);
 int print_integer(va_list);
 int print_to_binary(va_list);
-int number_caster(unsigned int, unsigned int, int);
 int print_octal(va_list);
 int print_hexadecimal(va_list);
 int print_hexadecimal_capitalized(va_list);
+int print_reversed_string(va_list);
+int print_rot13(va_list);
 int print_unsigned_integer(va_list);
-char *rot13(char *);
+int number_caster(unsigned int, unsigned int, int);
+int _puts_recursion(char *);
 int _printf(const char *, ...);
 /**
  *struct _printer - Struct _printer
