@@ -7,5 +7,7 @@
  */
 int print_string(va_list va)
 {
-	return (_puts_recursion(va_arg(va, char *)));
+	char *str = va_arg(va, char*);
+
+	return (_puts_recursion(str == NULL ? "(null)" : str));
 }
