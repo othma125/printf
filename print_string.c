@@ -8,6 +8,10 @@
 int print_string(va_list va)
 {
 	char *str = va_arg(va, char*);
+	int len = 0;
 
-	return (_puts_recursion(str == NULL ? "(null)" : str));
+	str = str == NULL ? "(null)" : str;
+	while (*(str + len) != '\0')
+		len++;
+	return (write(1, str, len));
 }

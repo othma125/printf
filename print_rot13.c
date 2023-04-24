@@ -18,11 +18,11 @@ int rot13_recursion(char *s)
 		if (*s == inputs[j])
 		{
 			_putchar(outputs[j]);
-			return (1 + _puts_recursion(s + 1));
+			return (1 + rot13_recursion(s + 1));
 		}
 	}
 	_putchar(*s);
-	return (1 + _puts_recursion(s + 1));
+	return (1 + rot13_recursion(s + 1));
 }
 /**
  * print_rot13 - check code
