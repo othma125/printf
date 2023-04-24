@@ -15,6 +15,6 @@ int number_caster(unsigned int n, unsigned int base, int cap)
 		return (number_caster(n / base, base, cap)
 			+ number_caster(n % base, base, cap));
 	c = cap ? 'A' : 'a';
-	_putchar(n <= 9 ? '0' + n : c + n - 10);
-	return (1);
+	c = n <= 9 ? '0' + n : c + n - 10;
+	return (write(1, &c, 1));
 }

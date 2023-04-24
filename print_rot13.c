@@ -16,13 +16,9 @@ int rot13_recursion(char *s)
 	for (j = 0; inputs[j] != '\0'; j++)
 	{
 		if (*s == inputs[j])
-		{
-			_putchar(outputs[j]);
-			return (1 + rot13_recursion(s + 1));
-		}
+			return (write(1, outputs + j, 1) + rot13_recursion(s + 1));
 	}
-	_putchar(*s);
-	return (1 + rot13_recursion(s + 1));
+	return (write(1, s, 1) + rot13_recursion(s + 1));
 }
 /**
  * print_rot13 - check code

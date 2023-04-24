@@ -7,13 +7,9 @@
  */
 int _reversed_puts_recursion(char *s)
 {
-	int n;
-
 	if (*s == '\0')
 		return (0);
-	n = _reversed_puts_recursion(s + 1);
-	_putchar(*s);
-	return (1 + n);
+	return (_reversed_puts_recursion(s + 1) + write(1, s, 1));
 }
 /**
  * print_reversed_string - check code

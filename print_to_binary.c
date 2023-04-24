@@ -7,10 +7,12 @@
  */
 int to_binary(unsigned int n)
 {
+	char digit;
+
 	if (n >= 2)
 		return (to_binary(n / 2) + to_binary(n % 2));
-	_putchar('0' + n);
-	return (1);
+	digit = '0' + n;
+	return (write(1, &digit, 1));
 }
 /**
  * print_to_binary - print numbers
