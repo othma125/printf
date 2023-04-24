@@ -20,7 +20,7 @@ int specifier_selector(const char *format, va_list va)
 	  {"X", print_hexadecimal_capitalized},
 	  {"u", print_unsigned_integer},
 	  {"s", print_string},
-	  {"S", print_unprintable},
+	  {"S", print_non_printable},
 	  {NULL, NULL}
 	};
 	int j;

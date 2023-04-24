@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * print_unprintable - handle the non printable characters
+ * print_non_printable - handle the non printable characters
  * 0 < (ASCII value) < 32 or >= 127) are printed this way :\x,
  * folowwed by the ASCII ode value in hexa(upper case - always 2 char)
  * @va: va_list arguments
  * Return: number of characters printed
  */
-int print_unprintable(va_list va)
+int print_non_printable(va_list va)
 {
 	int i, len = 0;
 	char *s = va_arg(va, char *), zero = '0';
