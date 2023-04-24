@@ -20,7 +20,7 @@ int specifier_selector(const char *format, va_list va)
 	  {"X", print_hexadecimal_capitalized},
 	  {"u", print_unsigned_integer},
 	  {"s", print_string},
-	  {"S", print_bigS},
+	  {"S", print_unprintable},
 	  {NULL, NULL}
 	};
 	int j;
@@ -43,7 +43,7 @@ int specifier_selector(const char *format, va_list va)
  * @text: text to display
  * Return: string length
  */
-int _printf(const char * const text, ...)
+int _printf(const char * text, ...)
 {
 	int i = 0, len = 0, condition = 0;
 	va_list va;
