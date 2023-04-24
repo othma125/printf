@@ -7,10 +7,8 @@
  */
 int print_char(va_list va)
 {
-	char c = va_arg(va, int), buffer[2];
+	char c = va_arg(va, int);
 	int i = 0;
 
-	buffer[i++] = c;
-	buffer[i] = '\0';
-	return (write(1, buffer, 1));
+	return (write(1, &c, 1));
 }
