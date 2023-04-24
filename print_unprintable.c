@@ -11,6 +11,7 @@ int print_unprintable(va_list va)
 {
 	int i, len = 0;
 	char *s = va_arg(va, char *);
+	unsigned int x;
 
 	if (!s)
 		return (0);
@@ -18,9 +19,14 @@ int print_unprintable(va_list va)
 	{
 		if (s[i] > 0 && (s[i] < 32 || s[i] >= 127))
 		{
-			_puts_recursion("\\x");
-			len += 2;
-			len += number_caster((unsigned int)s[i], 16, 1);
+			len += _puts_recursion("\\x");
+			x = (unsigned int)s[i];
+			if (x < 16)
+			{
+				len++;
+				_putchar('0');
+			}
+			len += number_caster(x, 16, 1);
 		}
 		else
 		{
