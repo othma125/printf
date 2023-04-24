@@ -24,19 +24,16 @@ int specifier_selector(const char *format, va_list va)
 	  {NULL, NULL}
 	};
 	int j;
+	char c = '%';
 
 	j = 0;
 	while (printers[j].print != NULL && *format != *(printers[j].type))
 		j++;
 	if (printers[j].print != NULL)
 		return (printers[j].print(va));
-	_putchar('%');
-	if (*format != '%')
-	{
-		_putchar(*format);
-		return (2);
-	}
-	return (1);
+	if (*format != c)
+		return (write(1, &c, 1) + write(1, format, 1));
+	return (write(1, &c, 1));
 }
 /**
  * _printf - check code
@@ -59,12 +56,11 @@ int _printf(const char *text, ...)
 			condition = 0;
 		}
 		else
-		{
-			_putchar(text[i]);
-			len++;
-		}
+			len += write(1, text + i, 1);
 		i++;
 	}
 	va_end(va);
-	return (text == NULL ? -1 : len);
+	if (text == NULL)
+		return (write(1, "(null)", 6));
+	return (len);
 }

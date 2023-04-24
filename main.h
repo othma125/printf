@@ -4,7 +4,7 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
-void _putchar(char);
+
 int print_char(va_list);
 int print_string(va_list);
 int print_integer(va_list);

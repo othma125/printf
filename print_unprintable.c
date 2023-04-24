@@ -10,7 +10,7 @@
 int print_unprintable(va_list va)
 {
 	int i, len = 0;
-	char *s = va_arg(va, char *);
+	char *s = va_arg(va, char *), zero = '0';
 	unsigned int x;
 
 	if (!s)
@@ -22,17 +22,11 @@ int print_unprintable(va_list va)
 			len += write(1, "\\x", 2);
 			x = (unsigned int)s[i];
 			if (x < 16)
-			{
-				len++;
-				_putchar('0');
-			}
+				len += write(1, &zero, 1);
 			len += number_caster(x, 16, 1);
 		}
 		else
-		{
-			_putchar(s[i]);
-			len++;
-		}
+			len += write(1, s + i, 1);
 	}
 	return (len);
 }
