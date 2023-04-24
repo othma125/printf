@@ -61,5 +61,5 @@ int _printf(const char *text, ...)
 		i++;
 	}
 	va_end(va);
-	return (len);
+	return (text == NULL ? -1 : len);
 }
