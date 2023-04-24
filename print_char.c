@@ -7,6 +7,12 @@
  */
 int print_char(va_list va)
 {
-	_putchar(va_arg(va, int));
-	return (1);
+	char c = va_arg(va, int);
+
+	if (c > 0 && (c < 32 || c >= 127))
+	{
+		_putchar(c);
+		return (1);
+	}
+	return (0);
 }

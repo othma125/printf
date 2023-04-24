@@ -43,7 +43,7 @@ int specifier_selector(const char *format, va_list va)
  * @text: text to display
  * Return: string length
  */
-int _printf(const char * text, ...)
+int _printf(const char *text, ...)
 {
 	int i = 0, len = 0, condition = 0;
 	va_list va;

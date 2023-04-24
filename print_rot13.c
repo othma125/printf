@@ -11,7 +11,7 @@ int rot13_recursion(char *s)
 	char *inputs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char *outputs = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	if (*s == '\0')
+	if (*s == '\0' || s == NULL)
 		return (0);
 	for (j = 0; inputs[j] != '\0'; j++)
 	{
