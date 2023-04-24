@@ -19,7 +19,7 @@ int print_unprintable(va_list va)
 	{
 		if (s[i] > 0 && (s[i] < 32 || s[i] >= 127))
 		{
-			len += _puts_recursion("\\x");
+			len += write(1, "\\x", 2);
 			x = (unsigned int)s[i];
 			if (x < 16)
 			{
