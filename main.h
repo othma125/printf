@@ -15,6 +15,7 @@ int print_hexadecimal_capitalized(va_list);
 int print_non_printable(va_list);
 int print_reversed_string(va_list);
 int print_rot13(va_list);
+int print_pointer(va_list);
 int print_unsigned_integer(va_list);
 int number_caster(unsigned int, unsigned int, int);
 int _puts_recursion(char *);

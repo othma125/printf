@@ -21,6 +21,7 @@ int specifier_selector(const char *format, va_list va)
 	  {"u", print_unsigned_integer},
 	  {"s", print_string},
 	  {"S", print_non_printable},
+	  {"p", print_pointer},
 	  {NULL, NULL}
 	};
 	int j;
