@@ -60,7 +60,5 @@ int _printf(const char *text, ...)
 		i++;
 	}
 	va_end(va);
-	if (text == NULL)
-		return (write(1, "(null)", 6));
 	return (len);
 }
