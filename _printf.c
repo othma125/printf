@@ -45,12 +45,13 @@ int _printf(const char *text, ...)
 	va_start(va, text);
 	while (text != NULL && text[i] != '\0')
 	{
-		if (text[i] == '%' && condition == 0)
+		if (text[i] == c && condition == 0)
 			condition = 1;
 		else if (condition == 1)
 		{
 			r = specifier_selector(text + i, va);
-			len += r < 0 ? write(1, &c, 1) + write(1, text + i, 1) : r;
+			len += r < 0 ? write(1, &c, 1)
+			  + (text[i] == c ? 0 : write(1, text + i, 1)) : r;
 			condition = 0;
 		}
 		else
