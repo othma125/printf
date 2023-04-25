@@ -43,8 +43,9 @@ int specifier_selector(const char *format, va_list va)
  */
 int _printf(const char *text, ...)
 {
-	int i = 0, len = 0, condition = 0;
+	int i = 0, r, len = 0, condition = 0;
 	va_list va;
+	char c = '%';
 
 	va_start(va, text);
 	while (text != NULL && text[i] != '\0')
@@ -53,7 +54,8 @@ int _printf(const char *text, ...)
 			condition = 1;
 		else if (condition == 1)
 		{
-			len += specifier_selector(text + i, va);
+			r = specifier_selector(text + i, va);
+			len += r < 0 ? write(1, &c, 1) + write(1, text + i, 1) : r;
 			condition = 0;
 		}
 		else

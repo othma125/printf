@@ -7,9 +7,12 @@
  */
 int print_char(va_list va)
 {
-	char buffer[2];
+	int x;
+	char c;
 
-	buffer[0] = va_arg(va, int);
-	buffer[1] = '\0';
-	return (write(1, buffer, 1));
+	x = va_arg(va, int);
+	if (x < 0)
+		return (x);
+	c = (char)x;
+	return (write(1, &c, 1));
 }
