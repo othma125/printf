@@ -52,7 +52,7 @@ int _printf(const char *text, ...)
 			r = specifier_selector(text + i, va);
 			len += r < 0 ? write(1, &c, 1)
 			  + (text[i] == c ? 0 : write(1, text + i, 1)) : r;
-			condition = 0;
+			condition = text[i] != c ? 0 : 1;
 		}
 		else
 			len += write(1, text + i, 1);
