@@ -13,11 +13,6 @@ int print_string(va_list va)
 	str = va_arg(va, char*);
 	str = str == NULL ? "(null)" : str;
 	while (*(str + len) != '\0')
-	{
-		if (str[len] > 0 && (str[len] < 32 || str[len] >= 127 || str[len] == '\n'))
-			len++;
-		else
-			return (-1);
-	}
+		len++;
 	return (write(1, str, len));
 }
