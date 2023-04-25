@@ -16,7 +16,8 @@ int print_string(va_list va)
 	{
 		if (str[len] > 0 && (str[len] < 32 || str[len] >= 127 || str[len] == '\n'))
 			len++;
-		return (-1);
+		else
+			return (-1);
 	}
 	return (write(1, str, len));
 }
