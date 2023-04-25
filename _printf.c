@@ -25,16 +25,11 @@ int specifier_selector(const char *format, va_list va)
 	  {NULL, NULL}
 	};
 	int j;
-	char c = '%';
 
 	j = 0;
 	while (printers[j].print != NULL && *format != *(printers[j].type))
 		j++;
-	if (printers[j].print != NULL)
-		return (printers[j].print(va));
-	if (*format != c)
-		return (write(1, &c, 1) + write(1, format, 1));
-	return (write(1, &c, 1));
+	return (printers[j].print != NULL ? printers[j].print(va) : -1);
 }
 /**
  * _printf - check code
